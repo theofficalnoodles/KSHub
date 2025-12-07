@@ -1,26 +1,12 @@
-{
-  "name": "kshub",
-  "version": "1.0.0",
-  "main": "main.js",
-  "author": "Kha",
-  "description": "KSHub browser",
-  "build": {
-    "appId": "com.kshub.browser",
-    "productName": "KSHub",
-    "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
+"build": {
+  "appId": "com.kshub.browser",
+  "productName": "KSHub",
+  "win": {
+    "target": "nsis",
+    "icon": "build/icon.ico"
   },
-  "scripts": {
-    "build": "electron-builder --win"
-  },
-  "devDependencies": {
-    "electron": "^32.0.0",
-    "electron-builder": "^25.0.0"
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
   }
 }
