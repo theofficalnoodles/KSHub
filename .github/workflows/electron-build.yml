@@ -10,10 +10,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Clone repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -21,12 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build installer
+      - name: Build Windows installer (.exe)
         run: npm run build
 
-      - name: Upload EXE to GitHub Releases
+      - name: Upload installer to GitHub Releases
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/*.exe
+          files: |
+            dist/*.exe
+            dist/*.msi
+            dist/*.zip
+            dist/latest.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
