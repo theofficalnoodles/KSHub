@@ -1,0 +1,4 @@
+"scripts": {
+  "build": "electron-builder --win",
+  "start": "electron ."
+}
